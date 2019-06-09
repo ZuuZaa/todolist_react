@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TodoItems from './TodoItems';
-import deleteItem from './TodoItems';
+import './TodoList.css';
 
 
 class TodoList extends Component {
@@ -46,9 +46,12 @@ class TodoList extends Component {
         return(
             <div className='todoMain'>
                 <div className='header'>
+                 <h5 className='text-muted'>Bu günü planlaşdırın.</h5>
+                 <h6 className='text-muted mb-5'>Planı listdən kənarlaşdırmaq üçün üzərinə klikləyin</h6>
+                    
                  <form onSubmit={this.addItem}>
-                     <input className='p-2 mr-3 text-center' ref={(a) => this._inputElement = a} placeholder='  .....edəcəklərim.....  '></input>
-                     <button className='btn btn-primary' type='submit'>əlavə et</button>
+                     <input className='p-3 m-3 text-center' ref={(a) => this._inputElement = a} placeholder='  .....edəcəklərim.....  '></input>
+                     <button className='btn btn-primary py-3 px-5' type='submit'>əlavə et</button>
                  </form>
                 </div>
                 <TodoItems entries={this.state.items}
